@@ -1,7 +1,15 @@
+delete from user;
 
-delete from  users;
+insert into user(id, name) values(1,'Deloitte');
+insert into user(id, name) values(2,'Labs');
+insert into user(id, name) values(3,'SpringBoot with Docker Demo');
 
-INSERT INTO users (id, email, password, name) VALUES 
+
+
+
+delete from  endusers;
+
+INSERT INTO endusers (id, email, password, name) VALUES 
 (1, 'admin@gmail.com', 'admin', 'Admin'),
 (2, 'test@gmail.com', 'test', 'TestUser'),
 (3, 'user@gmail.com', 'user', 'DemoUser')

@@ -1,13 +1,13 @@
 demo-mysql:
   image: mysql:latest
   environment:
-    - MYSQL_ROOT_PASSWORD=admin
-    - MYSQL_DATABASE=deloittelabs
-    - MYSQL_USER=root
-    - MYSQL_PASSWORD=admin
+    - MYSQL_ROOT_PASSWORD=secret123
+    - MYSQL_DATABASE=demo
+    - MYSQL_USER=dbuser
+    - MYSQL_PASSWORD=secret
 
-springboot-docker-demo:
-  image: deloitte/springboot-myc-rest-demo
+springboot-mvc-rest-demo:
+  image: srkadiyala/springboot-mvc-rest-demo
   links:
     - demo-mysql:mysql
   ports:

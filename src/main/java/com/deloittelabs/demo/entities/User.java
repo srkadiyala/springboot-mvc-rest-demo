@@ -1,46 +1,28 @@
+/**
+ * 
+ */
 package com.deloittelabs.demo.entities;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "USERS")
-public class User implements Serializable
+public class User
 {
-	private static final long serialVersionUID = 1L;
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Column(name = "name", nullable = false, length = 150)
-    private String name;
-    
-    @Column(name = "email", nullable = false, length = 150)
-    private String email;
-    
-    @Column(name = "password", nullable = false, length = 150)
-    private String password;
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	private String name;
 	
 	public User()
 	{
 	}
 
-	public User(Integer id)
+	public User(Integer id, String name)
 	{
 		this.id = id;
-	}
-
-	public User(Integer id, String email, String password, String name)
-	{
-		this.id = id;
-		this.email = email;
-		this.password = password;
 		this.name = name;
 	}
 
@@ -54,26 +36,6 @@ public class User implements Serializable
 		this.id = id;
 	}
 
-	public String getEmail()
-	{
-		return email;
-	}
-
-	public void setEmail(String email)
-	{
-		this.email = email;
-	}
-
-	public String getPassword()
-	{
-		return password;
-	}
-
-	public void setPassword(String password)
-	{
-		this.password = password;
-	}
-
 	public String getName()
 	{
 		return name;
@@ -83,5 +45,5 @@ public class User implements Serializable
 	{
 		this.name = name;
 	}
-
+	
 }
